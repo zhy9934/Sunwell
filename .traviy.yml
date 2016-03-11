@@ -1,0 +1,34 @@
+sudo: required
+dist: trusty
+language: cpp
+
+os:
+  - linux
+  - osx
+
+compiler:
+#  - gcc
+  - clang
+  
+git:
+  depth: 1
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get -qq install build-essential autoconf libtool gcc g++ clang clang++ make cmake git-core patch wget links zip unzip
+  - sudo apt-get -qq install libssl-dev  libmysqlclient15-dev libmysql++-dev libreadline6-dev libncurses5-dev zlib1g-dev libbz2-dev
+  - export CC=clang-3.5 CXX=clang++-3.5
+  - wget http://download.dre.vanderbilt.edu/previous_versions/ACE-6.0.3.tar.gz
+  - tar xvzf ACE-6.0.3.tar.gz
+  - cd ACE_wrappers/
+  - mkdir build
+  - cd build
+  - ../configure --disable-ssl
+  - make -j 2
+  - make install
+
+install:
+  - mkdir build
+  - cd build
+  - cmake ../ -DWITH_WARNINGS=1 -DWITH_COREDEBUG=1 -DUSE_COREPCH=1 -DUSE_SCRIPTPCH=1 -DTOOLS=1 -DSCRIPTS=1 -DSERVERS=1 -DNOJEM=1 -DCMAKE_BUILD_TYPE=Debug
+  - make -j 2 && make install
