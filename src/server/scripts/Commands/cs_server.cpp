@@ -117,7 +117,7 @@ public:
         uint32 updateTime = sWorld->GetUpdateTime();
         uint32 avgUpdateTime = avgDiffTracker.getAverage();
 
-		handler->PSendSysMessage("%s Realm, revision: %s.", realmName.c_str(), _REVISION);
+        handler->PSendSysMessage("%s Realm, revision: %s.", realmName.c_str(), _FULLVERSION);
 		handler->PSendSysMessage("This server runs on SunwellCore.");
 		if (!queuedSessionCount)
 			handler->PSendSysMessage("Connected players: %u. Characters in world: %u.", activeSessionCount, playerCount);
