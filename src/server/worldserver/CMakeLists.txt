@@ -102,9 +102,9 @@ include_directories(
   ${CMAKE_SOURCE_DIR}/src/server/game/Entities/Transport
   ${CMAKE_SOURCE_DIR}/src/server/game/Events
   ${CMAKE_SOURCE_DIR}/src/server/game/Globals
+  ${CMAKE_SOURCE_DIR}/src/server/game/Grids
   ${CMAKE_SOURCE_DIR}/src/server/game/Grids/Cells
   ${CMAKE_SOURCE_DIR}/src/server/game/Grids/Notifiers
-  ${CMAKE_SOURCE_DIR}/src/server/game/Grids
   ${CMAKE_SOURCE_DIR}/src/server/game/Groups
   ${CMAKE_SOURCE_DIR}/src/server/game/Guilds
   ${CMAKE_SOURCE_DIR}/src/server/game/Handlers
