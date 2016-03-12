@@ -24,6 +24,7 @@ before_install:
   - if [ "$CXX" = "clang++" ]; then export CXX="clang++-3.7" CC="clang-3.7"; fi
   - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+  - if [ "$CXX" = "cpp" ]; then export CXX="cpp-4.8" CC="cpp-4.8"; fi
 
 script:
   - mkdir build
