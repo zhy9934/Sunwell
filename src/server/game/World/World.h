@@ -843,9 +843,6 @@ class World
         // used versions
         std::string m_DBVersion;
 
-
-        std::list<std::string> m_Autobroadcasts;
-
         typedef std::map<uint8, std::string> AutobroadcastsMap;
         AutobroadcastsMap m_Autobroadcasts;
 
