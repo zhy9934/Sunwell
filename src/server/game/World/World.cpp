@@ -2648,8 +2648,6 @@ void World::SendAutoBroadcast()
     else
         msg = m_Autobroadcasts[urand(0, m_Autobroadcasts.size())];
 
-    msg = Trinity::Containers::SelectRandomContainerElement(m_Autobroadcasts);
-
     uint32 abcenter = sWorld->getIntConfig(CONFIG_AUTOBROADCAST_CENTER);
 
     if (abcenter == 0)
