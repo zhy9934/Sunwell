@@ -1015,7 +1015,6 @@ void Creature::SaveToDB()
 
 void Creature::SaveToDB(uint32 mapid, uint8 spawnMask, uint32 phaseMask)
 { 
-	return;
 
     // update in loaded data
     if (!m_DBTableGuid)
