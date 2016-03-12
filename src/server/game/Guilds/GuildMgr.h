@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -24,11 +24,11 @@ class GuildMgr
 {
     friend class ACE_Singleton<GuildMgr, ACE_Null_Mutex>;
 
-private:
+    private:
     GuildMgr();
     ~GuildMgr();
 
-public:
+    public:
     Guild* GetGuildByLeader(uint64 guid) const;
     Guild* GetGuildById(uint32 guildId) const;
     Guild* GetGuildByName(std::string const& guildName) const;
@@ -39,10 +39,13 @@ public:
     void RemoveGuild(uint32 guildId);
 
     uint32 GenerateGuildId();
-    void SetNextGuildId(uint32 Id) { NextGuildId = Id; }
+    void SetNextGuildId(uint32 Id)
+    {
+        NextGuildId = Id;
+    }
 
     void ResetTimes();
-protected:
+    protected:
     typedef UNORDERED_MAP<uint32, Guild*> GuildContainer;
     uint32 NextGuildId;
     GuildContainer GuildStore;

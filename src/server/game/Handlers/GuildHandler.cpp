@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -33,7 +33,7 @@ void WorldSession::HandleGuildQueryOpcode(WorldPacket& recvPacket)
     uint32 guildId;
     recvPacket >> guildId;
 
-   ;//sLog->outDebug(LOG_FILTER_GUILD, "CMSG_GUILD_QUERY [%s]: Guild: %u", GetPlayerInfo().c_str(), guildId);
+    ;//sLog->outDebug(LOG_FILTER_GUILD, "CMSG_GUILD_QUERY [%s]: Guild: %u", GetPlayerInfo().c_str(), guildId);
     if (!guildId)
         return;
 
@@ -46,7 +46,7 @@ void WorldSession::HandleGuildCreateOpcode(WorldPacket& recvPacket)
     std::string name;
     recvPacket >> name;
 
-	sLog->outError("CMSG_GUILD_CREATE: Possible hacking-attempt: %s tried to create a guild [Name: %s] using cheats", GetPlayerInfo().c_str(), name.c_str());
+    sLog->outError("CMSG_GUILD_CREATE: Possible hacking-attempt: %s tried to create a guild [Name: %s] using cheats", GetPlayerInfo().c_str(), name.c_str());
 }
 
 void WorldSession::HandleGuildInviteOpcode(WorldPacket& recvPacket)
@@ -177,7 +177,7 @@ void WorldSession::HandleGuildSetPublicNoteOpcode(WorldPacket& recvPacket)
     recvPacket >> playerName >> note;
 
     ;//sLog->outDebug(LOG_FILTER_GUILD, "CMSG_GUILD_SET_PUBLIC_NOTE [%s]: Target: %s, Note: %s",
-     //    GetPlayerInfo().c_str(), playerName.c_str(), note.c_str());
+    //    GetPlayerInfo().c_str(), playerName.c_str(), note.c_str());
 
     if (normalizePlayerName(playerName))
         if (Guild* guild = GetPlayer()->GetGuild())
@@ -231,7 +231,7 @@ void WorldSession::HandleGuildRankOpcode(WorldPacket& recvPacket)
         recvPacket >> bankRights;
         recvPacket >> slots;
 
-        rightsAndSlots[tabId] = GuildBankRightsAndSlots(tabId, bankRights, slots);
+        rightsAndSlots [tabId] = GuildBankRightsAndSlots(tabId, bankRights, slots);
     }
 
     guild->HandleSetRankInfo(this, rankId, rankName, rights, money, rightsAndSlots);
@@ -276,10 +276,10 @@ void WorldSession::HandleSaveGuildEmblemOpcode(WorldPacket& recvPacket)
     emblemInfo.ReadPacket(recvPacket);
 
     ;//sLog->outDebug(LOG_FILTER_GUILD, "MSG_SAVE_GUILD_EMBLEM [%s]: Guid: [" UI64FMTD
-     //   "] Style: %d, Color: %d, BorderStyle: %d, BorderColor: %d, BackgroundColor: %d"
-     //   , GetPlayerInfo().c_str(), vendorGuid, emblemInfo.GetStyle()
-     //   , emblemInfo.GetColor(), emblemInfo.GetBorderStyle()
-      //  , emblemInfo.GetBorderColor(), emblemInfo.GetBackgroundColor());
+    //   "] Style: %d, Color: %d, BorderStyle: %d, BorderColor: %d, BackgroundColor: %d"
+    //   , GetPlayerInfo().c_str(), vendorGuid, emblemInfo.GetStyle()
+    //   , emblemInfo.GetColor(), emblemInfo.GetBorderStyle()
+    //  , emblemInfo.GetBorderColor(), emblemInfo.GetBackgroundColor());
 
     if (GetPlayer()->GetNPCIfCanInteractWith(vendorGuid, UNIT_NPC_FLAG_TABARDDESIGNER))
     {
@@ -350,7 +350,7 @@ void WorldSession::HandleGuildBankQueryTab(WorldPacket& recvData)
     recvData >> guid >> tabId >> full;
 
     ;//sLog->outDebug(LOG_FILTER_GUILD, "CMSG_GUILD_BANK_QUERY_TAB [%s]: Go: [" UI64FMTD "], TabId: %u, ShowTabs: %u"
-     //   , GetPlayerInfo().c_str(), guid, tabId, full);
+    //   , GetPlayerInfo().c_str(), guid, tabId, full);
 
     if (GetPlayer()->GetGameObjectIfCanInteractWith(guid, GAMEOBJECT_TYPE_GUILD_BANK))
         if (Guild* guild = GetPlayer()->GetGuild())
@@ -364,7 +364,7 @@ void WorldSession::HandleGuildBankDepositMoney(WorldPacket& recvData)
     recvData >> guid >> money;
 
     ;//sLog->outDebug(LOG_FILTER_GUILD, "CMSG_GUILD_BANK_DEPOSIT_MONEY [%s]: Go: [" UI64FMTD "], money: %u",
-   //     GetPlayerInfo().c_str(), guid, money);
+    //     GetPlayerInfo().c_str(), guid, money);
 
     if (GetPlayer()->GetGameObjectIfCanInteractWith(guid, GAMEOBJECT_TYPE_GUILD_BANK))
         if (money && GetPlayer()->HasEnoughMoney(money))
@@ -379,7 +379,7 @@ void WorldSession::HandleGuildBankWithdrawMoney(WorldPacket& recvData)
     recvData >> guid >> money;
 
     ;//sLog->outDebug(LOG_FILTER_GUILD, "CMSG_GUILD_BANK_WITHDRAW_MONEY [%s]: Go: [" UI64FMTD "], money: %u",
-   //     GetPlayerInfo().c_str(), guid, money);
+    //     GetPlayerInfo().c_str(), guid, money);
 
     if (money && GetPlayer()->GetGameObjectIfCanInteractWith(guid, GAMEOBJECT_TYPE_GUILD_BANK))
         if (Guild* guild = GetPlayer()->GetGuild())
