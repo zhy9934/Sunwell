@@ -29,3 +29,5 @@ endif()
 add_library(Recast STATIC ${Recast_STAT_SRCS})
 
 target_link_libraries(Recast ${ZLIB_LIBRARIES})
+
+add_dependencies(Recast revision.h)
