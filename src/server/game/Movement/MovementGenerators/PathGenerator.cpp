@@ -20,9 +20,19 @@
 #include "Map.h"
 #include "Creature.h"
 #include "Log.h"
-
+#include "Cell.h"
 #include "DetourCommon.h"
 #include "DetourNavMeshQuery.h"
+#include "Creature.h"
+#include "MapManager.h"
+#include "ObjectAccessor.h"
+#include "Map.h"
+#include "Util.h"
+#include "CreatureGroups.h"
+#include "MoveSplineInit.h"
+#include "MoveSpline.h"
+#include "World.h"
+#include "WorldSession.h"
 
 ////////////////// PathGenerator //////////////////
 PathGenerator::PathGenerator(const Unit* owner) :

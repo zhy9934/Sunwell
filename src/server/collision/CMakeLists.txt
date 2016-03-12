@@ -86,6 +86,7 @@ add_library(collision STATIC
 target_link_libraries(collision
   shared
 )
+add_dependencies(collision revision.h)
 
 # Generate precompiled header
 if (USE_COREPCH)

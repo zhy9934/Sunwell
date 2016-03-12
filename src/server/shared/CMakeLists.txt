@@ -86,6 +86,7 @@ add_library(shared STATIC
 target_link_libraries(shared
   ${ACE_LIBRARY}
 )
+add_dependencies(shared revision.h)
 
 # Generate precompiled header
 if (USE_COREPCH)
