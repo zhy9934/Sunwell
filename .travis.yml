@@ -3,7 +3,7 @@ dist: thrusty
 language: cpp
 
 compiler:
-  ##- clang
+  - clang
   - gcc ## Uncomment when we are up to full c++11 standards.
   
 git:

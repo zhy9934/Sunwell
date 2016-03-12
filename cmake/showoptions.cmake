@@ -1,9 +1,8 @@
 # output generic information about the core and buildtype chosen
 message("")
-message("* Project Sunwell rev. hash  : ${rev_hash}")
-message("* Project Sunwell rev. date  : ${rev_date}")
+message("* SunwellCore revision   : ${rev_hash} ${rev_date} (${rev_branch} branch)")
 if( UNIX )
-  message("* Project Sunwell buildtype  : ${CMAKE_BUILD_TYPE}")
+  message("* SunwellCore buildtype  : ${CMAKE_BUILD_TYPE}")
 endif()
 message("")
 
